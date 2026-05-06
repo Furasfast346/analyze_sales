@@ -16,7 +16,7 @@ def test_analyze_sales_valid():
     data = response.json()
     assert "top_margin_dishes" in data
     assert "loss_making" in data
-    assert "total_revenue" == 3000 + 750 == 3750
+    assert data["total_revenue"] == 3000 + 750 == 3750
 
 def test_analyze_sales_empty():
     response = client.post("/analyze_sales", json={"sales": []})
