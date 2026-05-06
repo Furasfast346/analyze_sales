@@ -12,7 +12,7 @@
    cd analyze_sales
    ```
    
-Создай виртуальное окружение и активируй его:
+2. Создай виртуальное окружение и активируй его:
 
 ```bash
 python -m venv venv
@@ -20,17 +20,17 @@ source venv/bin/activate      # для Linux/Mac
 # venv\Scripts\activate       # для Windows
 ```
 
-Установи зависимости:
+3. Установи зависимости:
 
 ```bash
 pip install -r requirements.txt
 ```
-Запусти сервер:
+4. Запусти сервер:
 
 ```bash
 uvicorn app.main:app --reload
 ```
-Открой в браузере:
+5. Открой в браузере:
 
 ```text
 http://127.0.0.1:8000/docs
