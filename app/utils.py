@@ -2,7 +2,7 @@ from typing import List, Dict, Any
 from .schemas import SaleItem
 
 
-def analyze_sales_data(data : List[SaleItem]) -> Dict[str:Any]:
+def analyze_sales_data(data : List[SaleItem]) -> Dict[str, Any]:
     dishes = []
     total_revenue = 0.0
     total_margin = 0.0
