@@ -7,10 +7,10 @@
 ### Локальный запуск
 
 1. Клонируй репозиторий и перейди в папку проекта:
-   ```bash
-   git clone https://github.com/Furasfast346/analyze_sales.git
-   cd analyze_sales
-   ```
+```bash
+git clone https://github.com/Furasfast346/analyze_sales.git
+cd analyze_sales
+```
    
 2. Создай виртуальное окружение и активируй его:
 
