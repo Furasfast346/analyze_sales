@@ -1,6 +1,6 @@
 from typing import List, Dict, Any
 from .schemas import SaleItem
-
+from .AI_integration import create_suggestions
 
 def analyze_sales_data(data : List[SaleItem]) -> Dict[str, Any]:
     dishes = []
@@ -34,21 +34,7 @@ def analyze_sales_data(data : List[SaleItem]) -> Dict[str, Any]:
     # Все блюда с маржой меньше 30% Закидываем в этот словарь
     loss_making = [x['dish'] for x in dishes if x['margin_percent'] < 30]
 
-    suggestions = []
-    suggestions.append(f'Возможно стоит поднять цену на {dishes[-1]['dish']}')
-
-    # Добавляем предложения в массив suggestions
-    for dish in dishes:
-        if dish['margin'] > 100:
-            suggestions.append(
-                f'{dish['dish']} очень выгодно продаётся, возможно, стоит продвигать это блюдо активнее?')
-
-        if dish['margin'] < 30:
-            suggestions.append(
-                f'{dish['dish']} продаётся с низкой маржой, возможно стоит повысить цену?')
-
-    # Берем первые 3 предложения, чтобы не было огромных массивов с предложениями
-    suggestions = suggestions[:3]
+    suggestions = create_suggestions(dishes)
 
     return {
         "top_margin_dishes": top_margin_dishes,
